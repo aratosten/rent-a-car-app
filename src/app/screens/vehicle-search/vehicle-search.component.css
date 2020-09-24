@@ -1,0 +1,37 @@
+#search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+}
+
+#search-form form {
+  width: 25%;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+#search-form .advanced-search {
+  display: inline-block;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  margin: 5px auto;
+  cursor: pointer;
+}
+
+#search-form .advanced-search:hover {
+  background: var(--light-color-hover);
+  border-color: var(--dark-color);
+}
+
+#vehicle-search-footer .btn-round {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transition: all 0.4s ease;
+}
+
+#vehicle-search-footer .btn-round:hover {
+  transform: rotate(90deg);
+}

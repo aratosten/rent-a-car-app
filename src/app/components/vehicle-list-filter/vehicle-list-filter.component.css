@@ -1,0 +1,10 @@
+#vehicle-list-filter .container {
+  width: 250px;
+  padding-bottom: 15px;
+  border-radius: 20px;
+}
+
+#vehicle-list-filter .form-group {
+  width: 80%;
+  margin: auto;
+}

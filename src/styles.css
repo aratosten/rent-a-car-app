@@ -1,1 +1,153 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #399e0e;
+  --primary-color-hover: #2d7a0c;
+  --dark-color: #333;
+  --dark-color-hover: #444;
+  --light-color: #c7cfc4;
+  --light-color-hover: #9ea29d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+a:hover {
+  color: var(--primary-color-hover);
+}
+
+/* Padding */
+.py-1 {
+  padding: 10px 0;
+}
+.py-2 {
+  padding: 20px 0;
+}
+.py-3 {
+  padding: 30px 0;
+}
+
+/* Buttons */
+
+.btn {
+  font-size: 18px;
+  padding: 13px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+.btn-primary:hover {
+  background: var(--primary-color-hover);
+  color: var(--light-color);
+}
+
+.btn-dark {
+  background: var(--dark-color);
+  color: var(--light-color);
+}
+
+.btn-dark:hover {
+  background: var(--dark-color-hover);
+  color: var(--light-color);
+}
+
+.btn-light {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.btn-light:hover {
+  background: var(--light-color-hover);
+  color: var(--dark-color);
+}
+
+.btn-round {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 0;
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--light-color);
+  background: var(--dark-color);
+  cursor: pointer;
+}
+
+.btn-round:hover {
+  background: var(--dark-color-hover);
+}
+
+/* Texts */
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-dark {
+  color: var(--dark-color);
+}
+
+.text-light {
+  color: var(--light-color);
+}
+
+/* Backgrounds */
+
+.bg-primary {
+  background: var(--primary-color);
+}
+
+.bg-dark {
+  background: var(--dark-color);
+}
+
+.bg-light {
+  background: var(--light-color);
+}
+
+/* Form */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.form-group label {
+  padding: 5px 2px;
+}
+
+.form-group input {
+  height: 30px;
+  border: 1px var(--dark-color) solid;
+  border-radius: 5px;
+  color: var(--primary-color);
+  padding: 10px;
+}
+
+.form-group input:hover {
+  background: #fafafa;
+  border-color: var(--primary-color);
+}
+
+.form-group input:focus {
+  outline-color: var(--primary-color);
+}

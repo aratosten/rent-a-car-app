@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter {
+  top: 60px;
+  left: 15%;
+  position: fixed;
+  /* overflow-x: scroll; */
+  overflow-y: hidden;
+}
+
+.vehicles {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+}

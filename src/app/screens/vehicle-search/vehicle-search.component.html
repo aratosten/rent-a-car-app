@@ -1,0 +1,74 @@
+<section id="search-form">
+  <form action="submit" class="bg-light">
+    <div class="form-group">
+      <label for="brandInput">Brand</label>
+      <input type="text" list="brands" />
+      <datalist id="brands">
+        <option *ngFor="let car of cars" [value]="car.brand">
+          {{ car.brand }}
+        </option>
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label for="modelInput">Model</label>
+      <input type="text" list="models" />
+      <datalist id="models">
+        <option *ngFor="let car of cars" [value]="car.model">
+          {{ car.model }}
+        </option>
+      </datalist>
+    </div>
+    <div class="form-group">
+      <label for="numberOfSeatsInput">Number of seats</label>
+      <input type="number" min="1" max="12" />
+    </div>
+    <div class="form-group">
+      <label for="FromDate">From</label>
+      <input type="datetime-local" />
+    </div>
+    <div class="form-group">
+      <label for="ToDate">To</label>
+      <input type="datetime-local" />
+    </div>
+    <div class="advanced-search">
+      <a href="#" (click)="changeAdvancedSettings()"
+        ><b
+          >Advanced Search
+          <span *ngIf="!advanced">&#8595; </span>
+          <span *ngIf="advanced">&#8593;</span></b
+        ></a
+      >
+    </div>
+    <div class="advanced" *ngIf="advanced">
+      <div class="form-group">
+        <label for="vehicleTypeInput">Vehicle Type</label>
+        <input type="text" list="vehicleTypes" />
+        <datalist id="vehicleTypes">
+          <option *ngFor="let car of cars" [value]="car.vehicleType">
+            {{ car.vehicleType }}
+          </option>
+        </datalist>
+      </div>
+      <div class="form-group">
+        <label for="modelYearInput">Model Year</label>
+        <input type="number" min="1950" max="2021" />
+      </div>
+      <div class="form-group">
+        <label for="fuelTypeInput">Fuel Type</label>
+        <input type="text" list="fuelType" />
+        <datalist id="fuelType">
+          <option *ngFor="let car of cars" [value]="car.fuelType">
+            {{ car.fuelType }}
+          </option>
+        </datalist>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary">Search</button>
+    </div>
+  </form>
+</section>
+
+<footer id="vehicle-search-footer">
+  <button class="btn-round">+</button>
+</footer>

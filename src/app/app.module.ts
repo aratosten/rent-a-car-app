@@ -8,9 +8,10 @@ import { VehicleAddComponent } from "./screens/vehicle-add/vehicle-add.component
 import { VehicleListComponent } from './screens/vehicle-list/vehicle-list.component';
 import { VehicleListItemComponent } from './components/vehicle-list-item/vehicle-list-item.component';
 import { VehicleListFilterComponent } from './components/vehicle-list-filter/vehicle-list-filter.component';
+import { VehicleDetailsComponent } from './components/vehicle-details/vehicle-details.component';
 
 @NgModule({
-  declarations: [AppComponent, VehicleSearchComponent, VehicleAddComponent, VehicleListComponent, VehicleListItemComponent, VehicleListFilterComponent],
+  declarations: [AppComponent, VehicleSearchComponent, VehicleAddComponent, VehicleListComponent, VehicleListItemComponent, VehicleListFilterComponent, VehicleDetailsComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,6 +7,12 @@
   height: 200px;
 }
 
+#vehicle-list-item .vehicle-item:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  border-color: var(--primary-color);
+}
+
 #vehicle-list-item img {
   width: 30%;
   height: 80%;

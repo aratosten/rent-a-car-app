@@ -8,7 +8,7 @@ import { VehicleListComponent } from "./screens/vehicle-list/vehicle-list.compon
 import { VehicleSearchComponent } from "./screens/vehicle-search/vehicle-search.component";
 
 const routes: Routes = [
-  { path: "", component: VehicleDetailsComponent },
+  { path: "", component: VehicleListComponent },
   // { path: "", component: VehicleSearchComponent },
   { path: "vehicle-add", component: VehicleAddComponent },
   { path: "vehicle-list", component: VehicleListComponent },

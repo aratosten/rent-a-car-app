@@ -1,18 +1,16 @@
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .filter {
-  top: 60px;
-  left: 15%;
-  position: fixed;
-  /* overflow-x: scroll; */
-  overflow-y: hidden;
+  position: sticky;
+  /* align-self: flex-start; */
+  height: 100vh;
+  top: 10px;
+  overflow-y: scroll;
 }
 
 .vehicles {
-  display: flex;
-  flex-direction: column;
-  margin: 30px auto;
 }

@@ -4,7 +4,7 @@
   border: 1px solid var(--dark-color);
   border-radius: 10px;
   width: 700px;
-  height: 200px;
+  height: 180px;
 }
 
 #vehicle-list-item .vehicle-item:hover {
@@ -15,7 +15,7 @@
 
 #vehicle-list-item img {
   width: 30%;
-  height: 80%;
+  height: 90%;
   padding: 10px;
   border-radius: 15px;
   margin: auto;

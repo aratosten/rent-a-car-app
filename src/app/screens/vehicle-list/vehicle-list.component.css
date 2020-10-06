@@ -6,11 +6,11 @@
 
 .filter {
   position: sticky;
-  /* align-self: flex-start; */
   height: 100vh;
   top: 10px;
   overflow-y: scroll;
 }
 
 .vehicles {
+  margin-left: 10px;
 }

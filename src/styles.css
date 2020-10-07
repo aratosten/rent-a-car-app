@@ -158,3 +158,36 @@ a:hover {
 .form-group input:focus {
   outline-color: var(--primary-color);
 }
+
+.tab-container {
+  width: 130px;
+  height: 60px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.tab-container button {
+  width: 60px;
+  height: 60px;
+  margin: 0 2px;
+  border-color: var(--light-color);
+  border-radius: 10px;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  font-size: 25px;
+}
+
+.tab-container button:hover {
+  background-color: var(--light-color-hover);
+}
+
+.tab-container .active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.tab-container .active:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}

@@ -1,0 +1,32 @@
+#login {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+#login .container {
+  width: 400px;
+  background-color: var(--light-color);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+#login .container button {
+  display: block;
+  width: 100%;
+  margin: 25px 0 10px;
+}
+
+#login .container a {
+  display: block;
+  text-align: center;
+  color: var(--dark-color);
+}
+
+#login .container a:hover {
+  color: var(--primary-color-hover);
+}
+
+#login .form-group {
+  transition: all 0.5s ease;
+}

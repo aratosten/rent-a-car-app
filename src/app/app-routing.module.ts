@@ -3,12 +3,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { VehicleDetailsComponent } from "./components/vehicle-details/vehicle-details.component";
 import { VehicleListFilterComponent } from "./components/vehicle-list-filter/vehicle-list-filter.component";
 import { VehicleListItemComponent } from "./components/vehicle-list-item/vehicle-list-item.component";
+import { LoginComponent } from "./screens/login/login.component";
 import { VehicleAddComponent } from "./screens/vehicle-add/vehicle-add.component";
 import { VehicleListComponent } from "./screens/vehicle-list/vehicle-list.component";
 import { VehicleSearchComponent } from "./screens/vehicle-search/vehicle-search.component";
 
 const routes: Routes = [
-  { path: "", component: VehicleAddComponent },
+  { path: "", component: LoginComponent },
   // { path: "", component: VehicleSearchComponent },
   { path: "vehicle-add", component: VehicleAddComponent },
   { path: "vehicle-list", component: VehicleListComponent },

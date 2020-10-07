@@ -9,9 +9,10 @@ import { VehicleListComponent } from './screens/vehicle-list/vehicle-list.compon
 import { VehicleListItemComponent } from './components/vehicle-list-item/vehicle-list-item.component';
 import { VehicleListFilterComponent } from './components/vehicle-list-filter/vehicle-list-filter.component';
 import { VehicleDetailsComponent } from './components/vehicle-details/vehicle-details.component';
+import { LoginComponent } from './screens/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, VehicleSearchComponent, VehicleAddComponent, VehicleListComponent, VehicleListItemComponent, VehicleListFilterComponent, VehicleDetailsComponent],
+  declarations: [AppComponent, VehicleSearchComponent, VehicleAddComponent, VehicleListComponent, VehicleListItemComponent, VehicleListFilterComponent, VehicleDetailsComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

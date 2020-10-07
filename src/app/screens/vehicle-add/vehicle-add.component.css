@@ -8,7 +8,7 @@
   width: 500px;
   height: 700px;
   background-color: var(--light-color);
-  padding: 20px;
+  padding: 20px 40px;
   border-radius: 10px;
 }
 
@@ -20,4 +20,16 @@ h1 {
 
 .form-group button {
   margin-top: 20px;
+}
+
+#back-button .btn-round {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  transition: all 0.4s ease;
+  padding-bottom: 5px;
+}
+
+#back-button .btn-round:hover {
+  transform: rotate(10deg);
 }

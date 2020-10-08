@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,900;1,600&display=swap");
+
 :root {
   --primary-color: #399e0e;
   --primary-color-hover: #2d7a0c;
@@ -21,6 +23,7 @@ body {
   /* background-color: var(--primary-color); */
   background: url("https://picserio.com/data/out/102/dark-green-background_3225985.png");
   min-height: 100%;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 a {

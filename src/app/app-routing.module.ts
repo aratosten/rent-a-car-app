@@ -9,7 +9,13 @@ import { VehicleListComponent } from "./screens/vehicle-list/vehicle-list.compon
 import { VehicleSearchComponent } from "./screens/vehicle-search/vehicle-search.component";
 
 const routes: Routes = [
-  { path: "", component: LoginComponent },
+  {
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full",
+    component: LoginComponent,
+  },
+  // { path: "", component: VehicleSearchComponent },
   // { path: "", component: VehicleSearchComponent },
   { path: "vehicle-add", component: VehicleAddComponent },
   { path: "vehicle-list", component: VehicleListComponent },

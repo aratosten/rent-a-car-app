@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { AdvancedArrow } from "../../enumerations/enum-constants";
+import { AdvancedArrow } from "src/app/enumerations/enum-constants";
 
 @Component({
   selector: "app-vehicle-search",

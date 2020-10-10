@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="filter">
+    <app-vehicle-list-filter></app-vehicle-list-filter>
+  </div>
+  <div class="vehicles">
+    <app-vehicle-list-item
+      *ngFor="let item of [].constructor(10)"
+      (click)="onVehicle()"
+    ></app-vehicle-list-item>
+  </div>
+</div>

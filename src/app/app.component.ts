@@ -10,13 +10,13 @@ export class AppComponent {
   router: Router;
 
   title = "rent-a-car-app";
-  showTabs = false;
+  showTabs = true;
 
   constructor(router: Router) {}
 
   ngOnInit() {
-    if (this.router.url === "/login") {
-      this.showTabs = false;
-    }
+    // if (this.router.url === "/login") {
+    //   this.showTabs = false;
+    // }
   }
 }

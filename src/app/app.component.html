@@ -1,1 +1,13 @@
 <router-outlet></router-outlet>
+<div class="tab-container" *ngIf="showTabs()">
+  <button
+    class="fa fa-car"
+    routerLink="/vehicle-search"
+    routerLinkActive="active"
+  ></button>
+  <button
+    class="fa fa-users"
+    routerLink="/user-search"
+    routerLinkActive="active"
+  ></button>
+</div>

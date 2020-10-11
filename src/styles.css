@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,900;1,600&display=swap");
+
 :root {
   --primary-color: #399e0e;
   --primary-color-hover: #2d7a0c;
@@ -13,8 +15,15 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background: url("https://picserio.com/data/out/102/dark-green-background_3225985.png");
+  min-height: 100%;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 a {
@@ -22,10 +31,15 @@ a {
   text-decoration: none;
   font-size: 16px;
   padding: 5px;
+  cursor: pointer;
 }
 
 a:hover {
   color: var(--primary-color-hover);
+}
+
+button {
+  outline: none;
 }
 
 /* Padding */
@@ -51,7 +65,7 @@ a:hover {
 
 .btn-primary {
   background: var(--primary-color);
-  color: var(--light-color);
+  color: #fff;
 }
 
 .btn-primary:hover {
@@ -72,6 +86,7 @@ a:hover {
 .btn-light {
   background: var(--light-color);
   color: var(--dark-color);
+  border: 1px solid var(--dark-color);
 }
 
 .btn-light:hover {
@@ -89,10 +104,24 @@ a:hover {
   color: var(--light-color);
   background: var(--dark-color);
   cursor: pointer;
+  transition: all 0.4s ease;
 }
 
 .btn-round:hover {
   background: var(--dark-color-hover);
+  transform: rotate(90deg);
+}
+
+.back-button {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  transition: all 0.4s ease;
+  padding-bottom: 5px;
+}
+
+.back-button:hover {
+  transform: rotate(10deg);
 }
 
 /* Texts */
@@ -128,7 +157,7 @@ a:hover {
 .form-group {
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .form-group label {
@@ -150,4 +179,43 @@ a:hover {
 
 .form-group input:focus {
   outline-color: var(--primary-color);
+}
+
+.tab-container {
+  width: 130px;
+  height: 60px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.tab-container button {
+  width: 60px;
+  height: 60px;
+  margin: 0 2px;
+  border-color: var(--light-color);
+  border-radius: 10px;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  font-size: 25px;
+}
+
+.tab-container button:hover {
+  background-color: var(--light-color-hover);
+}
+
+.tab-container .active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.tab-container .active:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.dialog-box .mat-dialog-container {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
 }

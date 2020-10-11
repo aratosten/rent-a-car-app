@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { AdvancedArrow } from "../../enumerations/enum-constants";
+import { Router } from "@angular/router";
+import { AdvancedArrow } from "src/app/enumerations/enum-constants";
 
 @Component({
   selector: "app-vehicle-search",
@@ -46,15 +47,23 @@ export class VehicleSearchComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
-  changeAdvancedSettings() {
+  changeAdvancedSettings(): void {
     this.advanced = !this.advanced;
     this.advanced_arrow =
       this.advanced_arrow === AdvancedArrow.Down
         ? AdvancedArrow.Up
         : AdvancedArrow.Down;
+  }
+
+  onSearch(): void {
+    this.router.navigateByUrl("/vehicle-list");
+  }
+
+  onAdd(): void {
+    this.router.navigateByUrl("/vehicle-add");
   }
 }

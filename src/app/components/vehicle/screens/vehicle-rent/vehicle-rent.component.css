@@ -1,0 +1,30 @@
+#vehicle-rent {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.button-container button {
+  width: 100%;
+}

@@ -1,0 +1,48 @@
+#vehicle-details {
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+  height: 380px;
+  border-radius: 10px;
+}
+
+#vehicle-details .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 85%;
+}
+
+#vehicle-details img {
+  border-radius: 15px;
+}
+
+#vehicle-details .column {
+  margin-bottom: 25px;
+}
+
+#vehicle-details h1 {
+  text-align: center;
+  font-size: 35px;
+  padding: 5px 0;
+}
+
+#vehicle-details p {
+  font-size: 20px;
+  padding: 3px 0;
+}
+
+#vehicle-details .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 5px;
+  height: 15%;
+}
+
+#vehicle-details .buttons button {
+  width: 100px;
+  height: 50px;
+  margin: 0 5px;
+}

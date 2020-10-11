@@ -1,0 +1,36 @@
+#user-search {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0;
+}
+
+.input-search {
+  background: #fff;
+  border: 1px solid var(--dark-color);
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: text;
+}
+
+.input-search:hover,
+.input-search:hover input {
+  background: #fafafa;
+}
+
+.input-search i {
+  width: 10%;
+  text-align: center;
+}
+
+.input-search input {
+  width: 90%;
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+}

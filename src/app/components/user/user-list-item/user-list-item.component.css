@@ -1,0 +1,31 @@
+#user-list-item {
+  height: 120px;
+  width: 400px;
+  background: var(--light-color);
+  border-radius: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#user-list-item:hover {
+  background: var(--light-color-hover);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: inherit;
+}
+
+.row img {
+  padding: 5px;
+  height: 80%;
+  border-radius: 50%;
+  border: 1px solid var(--dark-color);
+}
+
+.name h1 {
+  font-size: 40px;
+}

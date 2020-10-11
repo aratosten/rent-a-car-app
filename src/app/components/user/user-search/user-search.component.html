@@ -4,5 +4,10 @@
       <i class="fa fa-search"></i>
       <input type="text" />
     </div>
+    <div class="user-list">
+      <app-user-list-item
+        *ngFor="let item of [].constructor(4)"
+      ></app-user-list-item>
+    </div>
   </div>
 </section>

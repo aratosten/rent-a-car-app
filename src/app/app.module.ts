@@ -13,9 +13,10 @@ import { VehicleListComponent } from "./components/vehicle/screens/vehicle-list/
 import { VehicleSearchComponent } from "./components/vehicle/screens/vehicle-search/vehicle-search.component";
 import { VehicleListFilterComponent } from "./components/vehicle/vehicle-list-filter/vehicle-list-filter.component";
 import { VehicleListItemComponent } from "./components/vehicle/vehicle-list-item/vehicle-list-item.component";
-import { UserSearchComponent } from './components/user/user-search/user-search.component';
-import { UserAddComponent } from './components/user/user-add/user-add.component';
-import { UserDetailsComponent } from './components/user/user-details/user-details.component';
+import { UserSearchComponent } from "./components/user/user-search/user-search.component";
+import { UserAddComponent } from "./components/user/user-add/user-add.component";
+import { UserDetailsComponent } from "./components/user/user-details/user-details.component";
+import { UserListItemComponent } from "./components/user/user-list-item/user-list-item.component";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UserDetailsComponent } from './components/user/user-details/user-detail
     UserSearchComponent,
     UserAddComponent,
     UserDetailsComponent,
+    UserListItemComponent,
   ],
   imports: [
     BrowserModule,

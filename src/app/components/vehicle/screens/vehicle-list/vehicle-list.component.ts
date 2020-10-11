@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { VehicleDetailsComponent } from "src/app/components/popups/vehicle-details/vehicle-details.component";
 
@@ -9,7 +10,7 @@ import { VehicleDetailsComponent } from "src/app/components/popups/vehicle-detai
   styleUrls: ["./vehicle-list.component.css"],
 })
 export class VehicleListComponent implements OnInit {
-  constructor(private matDialog: MatDialog) {}
+  constructor(private matDialog: MatDialog, private router: Router) {}
 
   ngOnInit() {}
 
@@ -23,5 +24,9 @@ export class VehicleListComponent implements OnInit {
     );
 
     return dialogRef.afterClosed();
+  }
+
+  onAdd(): void {
+    this.router.navigateByUrl("/vehicle-add");
   }
 }

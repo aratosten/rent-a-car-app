@@ -15,7 +15,7 @@ import { VehicleListFilterComponent } from "./components/vehicle/vehicle-list-fi
 import { VehicleListItemComponent } from "./components/vehicle/vehicle-list-item/vehicle-list-item.component";
 import { UserSearchComponent } from "./components/user/user-search/user-search.component";
 import { UserAddComponent } from "./components/user/user-add/user-add.component";
-import { UserDetailsComponent } from "./components/user/user-details/user-details.component";
+import { UserDetailsComponent } from "./components/popups/user-details/user-details.component";
 import { UserListItemComponent } from "./components/user/user-list-item/user-list-item.component";
 
 @NgModule({
@@ -42,6 +42,6 @@ import { UserListItemComponent } from "./components/user/user-list-item/user-lis
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [VehicleDetailsComponent],
+  entryComponents: [VehicleDetailsComponent, UserDetailsComponent],
 })
 export class AppModule {}

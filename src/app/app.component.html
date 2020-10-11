@@ -1,8 +1,8 @@
 <router-outlet></router-outlet>
-<div class="tab-container" *ngIf="showTabs">
+<div class="tab-container" *ngIf="showTabs()">
   <button
     class="fa fa-car"
-    routerLink="/vehicle-list"
+    routerLink="/vehicle-search"
     routerLinkActive="active"
   ></button>
   <button

@@ -13,14 +13,18 @@
   border-radius: 10px;
 }
 
+.container h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .button-container button {
-  width: 70%;
+  width: 100%;
 }

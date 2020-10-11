@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (this.isLogin) {
-      this.router.navigateByUrl("/vehicle-list");
+      this.router.navigateByUrl("/vehicle-search");
     }
   }
 }

@@ -1,14 +1,12 @@
 #search-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3%;
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 
 #search-form form {
-  width: 25%;
-  padding: 10px 20px;
+  width: 40%;
+  padding: 40px;
   border-radius: 10px;
 }
 
@@ -29,9 +27,4 @@
   position: fixed;
   bottom: 40px;
   right: 40px;
-  transition: all 0.4s ease;
-}
-
-#vehicle-search-footer .btn-round:hover {
-  transform: rotate(90deg);
 }

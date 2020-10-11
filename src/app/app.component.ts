@@ -1,3 +1,4 @@
+import { Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
@@ -7,16 +8,14 @@ import { Router } from "@angular/router";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  router: Router;
+  constructor(private location: Location) {}
 
-  title = "rent-a-car-app";
-  showTabs = true;
+  ngOnInit() {}
 
-  constructor(router: Router) {}
-
-  ngOnInit() {
-    // if (this.router.url === "/login") {
-    //   this.showTabs = false;
-    // }
+  showTabs(): boolean {
+    if (this.location.path() === "/login") {
+      return false;
+    }
+    return true;
   }
 }

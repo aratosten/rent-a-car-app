@@ -23,12 +23,15 @@ export class VehicleListComponent implements OnInit {
     this.cars = this.vehicleService.getVehicles();
   }
 
-  onVehicle(): Observable<any> {
+  onVehicle(index: number): Observable<any> {
     let dialogRef: MatDialogRef<VehicleDetailsComponent> = this.matDialog.open(
       VehicleDetailsComponent,
       {
         panelClass: "dialog-box",
         autoFocus: false,
+        data: {
+          car: this.cars[index],
+        },
       }
     );
 

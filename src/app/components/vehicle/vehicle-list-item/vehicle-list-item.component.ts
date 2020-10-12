@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "app-vehicle-list-item",
@@ -7,6 +7,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 })
 export class VehicleListItemComponent implements OnInit {
   @ViewChild("vehicleListItem", { static: false }) vehicleListItem: ElementRef;
+  @Input() vehicle;
 
   constructor() {}
 

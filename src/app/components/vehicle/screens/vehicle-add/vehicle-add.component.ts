@@ -1,6 +1,7 @@
 import { Location } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { VehicleService } from "src/app/services/vehicle.service";
 
 @Component({
   selector: "app-vehicle-add",
@@ -8,9 +9,17 @@ import { Router } from "@angular/router";
   styleUrls: ["./vehicle-add.component.css"],
 })
 export class VehicleAddComponent implements OnInit {
-  constructor(private router: Router, private location: Location) {}
+  cars: any[];
 
-  ngOnInit() {}
+  constructor(
+    private router: Router,
+    private location: Location,
+    private vehicleService: VehicleService
+  ) {}
+
+  ngOnInit() {
+    this.cars = this.vehicleService.getVehicles();
+  }
 
   onAdd(): void {
     alert("Vehicle added successfully!");

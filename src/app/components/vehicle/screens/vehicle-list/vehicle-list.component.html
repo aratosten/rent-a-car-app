@@ -4,9 +4,9 @@
   </div>
   <div class="vehicles">
     <app-vehicle-list-item
-      *ngFor="let car of cars"
+      *ngFor="let car of cars; let i = index"
       [vehicle]="car"
-      (click)="onVehicle()"
+      (click)="onVehicle(i)"
     ></app-vehicle-list-item>
   </div>
 </div>

@@ -16,6 +16,8 @@
 
 #vehicle-details img {
   border-radius: 15px;
+  width: 45%;
+  height: 80%;
 }
 
 #vehicle-details .column {

@@ -14,6 +14,7 @@ export class VehicleService {
       modelYear: 2020,
       fuelType: "Electric",
       color: "Green",
+      location: "Zmaja od Bosne bb",
       image: "https://mlfree.com/wp-content/uploads/2017/07/vw_golf_5_01-1.jpg",
     },
     {
@@ -25,6 +26,7 @@ export class VehicleService {
       modelYear: 2004,
       fuelType: "Diesel",
       color: "Gray",
+      location: "Zmaja od Bosne bb",
       image: "https://mlfree.com/wp-content/uploads/2017/07/vw_golf_5_01-1.jpg",
     },
     {
@@ -36,6 +38,7 @@ export class VehicleService {
       modelYear: 2005,
       fuelType: "Petrol",
       color: "Yellow",
+      location: "Zmaja od Bosne bb",
       image: "https://mlfree.com/wp-content/uploads/2017/07/vw_golf_5_01-1.jpg",
     },
   ];

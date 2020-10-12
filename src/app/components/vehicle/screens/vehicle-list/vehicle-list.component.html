@@ -4,7 +4,8 @@
   </div>
   <div class="vehicles">
     <app-vehicle-list-item
-      *ngFor="let item of [].constructor(10)"
+      *ngFor="let car of cars"
+      [vehicle]="car"
       (click)="onVehicle()"
     ></app-vehicle-list-item>
   </div>

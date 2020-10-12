@@ -1,40 +1,37 @@
 <section id="vehicle-list-item">
   <div class="vehicle-item bg-light">
-    <img
-      src="https://mlfree.com/wp-content/uploads/2017/07/vw_golf_5_01-1.jpg"
-      alt="Vehicle Image"
-    />
+    <img src="{{ vehicle.image }}" alt="Vehicle Image" />
     <div class="vehicle-details">
       <div class="vehicle-primary-details">
         <div class="detail-group">
           <p>Brand</p>
-          <h2>Volkswagen</h2>
+          <h2>{{ vehicle.brand }}</h2>
         </div>
         <div class="detail-group">
           <p>Model</p>
-          <h2>Golf 5</h2>
+          <h2>{{ vehicle.model }}</h2>
         </div>
       </div>
       <div class="vehicle-secondary-details">
         <div class="detail-group">
           <p>Model Year</p>
-          <h4>2004</h4>
+          <h4>{{ vehicle.modelYear }}</h4>
         </div>
         <div class="detail-group">
           <p>Fuel Type</p>
-          <h4>Diesel</h4>
+          <h4>{{ vehicle.fuelType }}</h4>
         </div>
         <div class="detail-group">
           <p>Number of seats</p>
-          <h4>4 seats</h4>
+          <h4>{{ vehicle.numberOfSeats }}</h4>
         </div>
         <div class="detail-group">
           <p>Address</p>
-          <h4>Sarajevo, Zmaja od Bosne bb</h4>
+          <h4>{{ vehicle.location }}</h4>
         </div>
         <div class="detail-group">
           <p>Status</p>
-          <h4>Available</h4>
+          <h4>{{ vehicle.isAvaliable ? "Available" : "Unavailable" }}</h4>
         </div>
       </div>
     </div>

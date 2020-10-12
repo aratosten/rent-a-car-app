@@ -14,4 +14,8 @@ export class VehicleListFilterComponent implements OnInit {
   ngOnInit() {
     this.cars = this.vehicleService.getVehicles();
   }
+
+  onSearch(): void {
+    window.location.reload();
+  }
 }

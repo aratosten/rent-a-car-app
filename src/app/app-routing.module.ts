@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: "vehicle-rent", component: VehicleRentComponent },
   { path: "user-search", component: UserSearchComponent },
   { path: "user-add", component: UserAddComponent },
+  { path: "**", component: VehicleSearchComponent },
 ];
 
 @NgModule({

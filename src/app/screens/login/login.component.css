@@ -39,3 +39,8 @@
 #login b {
   font-weight: 900;
 }
+
+#login .alert-danger {
+  font-size: 10px;
+  color: red;
+}

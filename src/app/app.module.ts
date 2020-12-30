@@ -17,6 +17,10 @@ import { UserSearchComponent } from "./components/user/user-search/user-search.c
 import { UserAddComponent } from "./components/user/user-add/user-add.component";
 import { UserDetailsComponent } from "./components/popups/user-details/user-details.component";
 import { UserListItemComponent } from "./components/user/user-list-item/user-list-item.component";
+import { FormsModule } from '@angular/forms';
+import { MatchPasswordDirective } from './directives/match-password.directive';
+import { UserService } from './services/user.service';
+import { ExistingEmailDirective } from './directives/existing-email.directive';
 
 @NgModule({
   declarations: [
@@ -33,14 +37,17 @@ import { UserListItemComponent } from "./components/user/user-list-item/user-lis
     UserAddComponent,
     UserDetailsComponent,
     UserListItemComponent,
+    MatchPasswordDirective,
+    ExistingEmailDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
   entryComponents: [VehicleDetailsComponent, UserDetailsComponent],
 })

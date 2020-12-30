@@ -1,20 +1,113 @@
 <section id="login">
   <div class="container">
-    <form action="submit">
+    <form
+      (ngSubmit)="onSubmit()"
+      #loginForm="ngForm"
+      [appMatchPassword]="['password', 'rePassword']"
+    >
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" />
+        <input
+          type="text"
+          [(ngModel)]="user.email"
+          name="email"
+          #email="ngModel"
+          required
+          email
+          appExistingEmail
+        />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (email.touched || loginForm.submitted) &&
+            email.errors?.required &&
+            !isLogin
+          "
+        >
+          Email is required
+        </div>
+        <div
+          class="alert-danger"
+          *ngIf="loginForm.submitted && email.errors?.existingEmail && !isLogin"
+        >
+          Email is already used
+        </div>
+        <div
+          class="alert-danger"
+          *ngIf="
+            (email.touched || loginForm.submitted) &&
+            email.errors?.email &&
+            !isLogin
+          "
+        >
+          Email is not valid
+        </div>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" />
+        <input
+          type="password"
+          [(ngModel)]="user.password"
+          name="password"
+          #password="ngModel"
+          required
+          pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+        />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (password.touched || loginForm.submitted) &&
+            password.errors?.required &&
+            !isLogin
+          "
+        >
+          Password is required
+        </div>
+        <div
+          class="alert-danger"
+          *ngIf="
+            (password.touched || loginForm.submitted) &&
+            password.errors?.pattern &&
+            !isLogin
+          "
+        >
+          Password should have minimum 8 characters, at least 1 uppercase
+          letter, 1 lowercase letter and 1 number
+        </div>
+        <div class="alert-danger" *ngIf="loginForm.submitted && isInvalidLogin">
+          Invalid Email/Password
+        </div>
         <a class="forgot-password" *ngIf="isLogin">Forgot Password?</a>
       </div>
       <div class="form-group" *ngIf="!isLogin">
         <label for="re-password">Retype Password</label>
-        <input type="password" />
+        <input
+          type="password"
+          [(ngModel)]="rePassword"
+          name="rePassword"
+          #rePasswordModel="ngModel"
+          required
+        />
+        <div
+          *ngIf="
+            (rePasswordModel.touched || loginForm.submitted) &&
+            rePasswordModel.errors?.required
+          "
+          class="alert-danger"
+        >
+          Retyped Password is required
+        </div>
+        <div
+          *ngIf="
+            (rePasswordModel.touched || loginForm.submitted) &&
+            rePasswordModel.errors?.passwordMismatch
+          "
+          class="alert-danger"
+        >
+          Passwords do not match
+        </div>
       </div>
-      <button class="btn btn-primary" (click)="onSubmit()">
+      <button class="btn btn-primary" type="submit">
         {{ isLogin ? "Login" : "Sign Up" }}
       </button>
       <a class="link" (click)="onLink()"

@@ -1,15 +1,3 @@
-export enum Brand {
-  PORSCHE = "Porsche",
-  VOLKSWAGEN = "Volkswagen",
-  VOLVO = "Volvo",
-}
-
-export enum Model {
-  TAYCAN = "Taycan",
-  GOLF_5 = "Golf 5",
-  S_60 = "S 60",
-}
-
 export enum VehicleType {
   SEDAN = "Sedan",
   SUV = "SUV",
@@ -22,6 +10,16 @@ export enum FuelType {
   PETROL = "Petrol",
   ELECTRIC = "Electric",
   HYBRID = "Hybrid",
+}
+
+export enum Color {
+  BLACK = "Black",
+  WHITE = "White",
+  RED = "Red",
+  BLUE = "Blue",
+  YELLOW = "Yellow",
+  GREEN = "Green",
+  GREY = "Grey"
 }
 
 export enum AdvancedArrow {

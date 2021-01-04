@@ -17,7 +17,7 @@ import { UserSearchComponent } from "./components/user/user-search/user-search.c
 import { UserAddComponent } from "./components/user/user-add/user-add.component";
 import { UserDetailsComponent } from "./components/popups/user-details/user-details.component";
 import { UserListItemComponent } from "./components/user/user-list-item/user-list-item.component";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatchPasswordDirective } from './directives/match-password.directive';
 import { UserService } from './services/user.service';
 import { ExistingEmailDirective } from './directives/existing-email.directive';
@@ -46,6 +46,7 @@ import { ExistingEmailDirective } from './directives/existing-email.directive';
     MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

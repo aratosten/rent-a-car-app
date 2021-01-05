@@ -23,6 +23,18 @@
   border-color: var(--dark-color);
 }
 
+#search-form .btn-round {
+  position: fixed;
+  right: 26.2%;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+}
+
+#search-form .btn-round:hover {
+  transform: rotate(15deg);
+}
+
 #vehicle-search-footer .btn-round {
   position: fixed;
   bottom: 40px;

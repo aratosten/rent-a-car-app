@@ -47,4 +47,8 @@ export class VehicleSearchComponent implements OnInit {
   onBrandChanged(brand): void {
     this.vehicleModels = this.vehicleService.getVehicleModels(brand);
   }
+
+  onReset(): void {
+    this.vehicleSearchForm.reset();
+  }
 }

@@ -11,6 +11,11 @@
   border-radius: 10px;
 }
 
+.form-group-data {
+  display: flex;
+  flex-direction: row;
+}
+
 h1 {
   text-align: center;
   height: 35px;

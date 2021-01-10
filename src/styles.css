@@ -221,3 +221,8 @@ button {
   border-radius: 10px;
   background-color: var(--primary-color);
 }
+
+.alert-danger {
+  font-size: 10px;
+  color: red;
+}

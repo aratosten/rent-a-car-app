@@ -1,4 +1,6 @@
 import { Injectable } from "@angular/core";
+import { VehicleAddFormGroup } from '../components/form-groups/vehicle-add-formgroup';
+import { VehicleSearchFormGroup } from '../components/form-groups/vehicle-search-formgroup';
 import { Color, FuelType, VehicleType } from '../enumerations/enum-constants';
 import { Vehicle } from '../models/vehicle';
 import { VehicleModel } from '../models/vehicle-model';
@@ -7,6 +9,17 @@ import { VehicleModel } from '../models/vehicle-model';
   providedIn: "root",
 })
 export class VehicleService {
+  filters: any = {
+    brand: null,
+    model: null,
+    numberOfSeats: null,
+    to: null,
+    from: null,
+    vehicleType: null,
+    modelYear: null,
+    fuelType: null
+  };
+
   vehicleModels: VehicleModel[] = [
     {
       brand: 'Porsche',
@@ -57,6 +70,7 @@ export class VehicleService {
       fuelType: FuelType.ELECTRIC,
       color: Color.GREEN,
       location: "Zmaja od Bosne bb",
+      plateNumber: "ABC-123",
       image:
         "https://www.teslarati.com/wp-content/uploads/2019/03/PorscheTaycan_black_front-e1552066022563.jpg",
     },
@@ -75,6 +89,7 @@ export class VehicleService {
       fuelType: FuelType.DIESEL,
       color: Color.GREY,
       location: "Antuna Hangija 9",
+      plateNumber: "BGH-123",
       image: "https://mlfree.com/wp-content/uploads/2017/07/vw_golf_5_01-1.jpg",
     },
     {
@@ -92,6 +107,7 @@ export class VehicleService {
       fuelType: FuelType.PETROL,
       color: Color.YELLOW,
       location: "Dzemala Bijedica 54",
+      plateNumber: "GLK-123",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/b/ba/Volvo_S60_II_D3_front_20101002.jpg",
     },
@@ -110,6 +126,7 @@ export class VehicleService {
       fuelType: FuelType.DIESEL,
       color: Color.BLACK,
       location: "Braće Begić 62",
+      plateNumber: "GJD-123",
       image:
         "https://www.renault-klub.hr/forum/uploads/monthly_2018_09/20180909_142415.jpg.bec528daec57c89275f5a8382df550ac.jpg",
     },
@@ -128,6 +145,7 @@ export class VehicleService {
       fuelType: FuelType.DIESEL,
       color: Color.WHITE,
       location: "Gradacacka 29",
+      plateNumber: "TGH-123",
       image:
         "https://v2h4h4i3.stackpathcdn.com/media/k2/galleries/358/Opel_Vectra_C_rear_20090920.jpg",
     },
@@ -142,6 +160,7 @@ export class VehicleService {
       fuelType: FuelType.DIESEL,
       color: Color.RED,
       location: "Trg Heroja 23",
+      plateNumber: "GJA-123",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/3/35/Fiat_Punto_front_20071204.jpg",
     },
@@ -160,6 +179,7 @@ export class VehicleService {
       fuelType: FuelType.PETROL,
       color: Color.BLUE,
       location: "Brčanska 12",
+      plateNumber: "AVC-123",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/b/b2/Ford_Focus_2004.jpg",
     },
@@ -167,8 +187,58 @@ export class VehicleService {
 
   constructor() {}
 
-  getVehicles(): any[] {
-    return this.vehicles.slice();
+  getVehicles(): Vehicle[] {
+    var filteredVehicles = this.vehicles.slice();
+    
+    if (this.filters.brand) {
+      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.brand === this.filters.brand);
+    }
+    if (this.filters.model) {
+      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.model === this.filters.model);
+    }
+    if (this.filters.numberOfSeats) {
+      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.numberOfSeats === this.filters.numberOfSeats);
+    }
+    if (this.filters.vehicleType) {
+      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.vehicleType === this.filters.vehicleType);
+    }
+    if (this.filters.modelYear) {
+      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.modelYear === this.filters.modelYear);
+    }
+    if (this.filters.fuelType) {
+      filteredVehicles = filteredVehicles.filter(vehicle => vehicle.fuelType === this.filters.fuelType);
+    }
+    if (this.filters.from && this.filters.to) {
+      filteredVehicles = filteredVehicles.filter(vehicle => {
+        vehicle.rentSchedules.forEach(rent => {
+          if ((rent.from < this.filters.from && rent.to <= this.filters.from) 
+          || (rent.from >= this.filters.from && rent.to > this.filters.from)) {
+            return true;
+          }
+        });
+        return false;
+      });
+    }
+
+    return filteredVehicles;
+  }
+
+  addVehicle(vehicle: VehicleAddFormGroup): void {
+    const newVehicle: Vehicle = {
+      brand: vehicle.brand.value,
+      model: vehicle.model.value,
+      numberOfSeats: vehicle.numberOfSeats.value,
+      vehicleType: vehicle.vehicleType.value,
+      modelYear: vehicle.modelYear.value,
+      fuelType: vehicle.fuelType.value,
+      color: vehicle.color.value,
+      location: vehicle.location.value,
+      plateNumber: vehicle.plateNumber.value,
+      image: vehicle.image.value,
+      rentSchedules: []
+    };
+    
+    this.vehicles.push(newVehicle);
   }
 
   getVehicleBrands(): string[] {
@@ -185,5 +255,31 @@ export class VehicleService {
     }
 
     return [];
+  }
+
+  resetFilters(): void {
+    this.filters = {
+      brand: null,
+      model: null,
+      numberOfSeats: null,
+      to: null,
+      from: null,
+      vehicleType: null,
+      modelYear: null,
+      fuelType: null
+    };
+  }
+
+  setFilters(vehicleSearchFormGroup: VehicleSearchFormGroup): void {
+    this.filters = {
+      brand: vehicleSearchFormGroup.brand.value,
+      model: vehicleSearchFormGroup.model.value,
+      numberOfSeats: vehicleSearchFormGroup.numberOfSeats.value,
+      to: vehicleSearchFormGroup.to.value,
+      from: vehicleSearchFormGroup.from.value,
+      vehicleType: vehicleSearchFormGroup.vehicleType.value,
+      modelYear: vehicleSearchFormGroup.modelYear.value,
+      fuelType: vehicleSearchFormGroup.fuelType.value
+    };
   }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { VechicleSearchFormGroup } from 'src/app/components/form-groups/vehicle-search-formgroup';
+import { VehicleSearchFormGroup } from 'src/app/components/form-groups/vehicle-search-formgroup';
 import { AdvancedArrow, FuelType, VehicleType } from "src/app/enumerations/enum-constants";
+import { Vehicle } from 'src/app/models/vehicle';
 import { VehicleService } from "src/app/services/vehicle.service";
 
 @Component({
@@ -14,16 +15,17 @@ export class VehicleSearchComponent implements OnInit {
   fuelTypes: string[] = Object.values(FuelType);
   vehicleBrands: string[] = this.vehicleService.getVehicleBrands();
   vehicleModels: string[] = [];
-  cars: any[];
+  cars: Vehicle[];
   advanced = false;
   advanced_arrow = AdvancedArrow.Down;
 
-  vehicleSearchForm: VechicleSearchFormGroup = new VechicleSearchFormGroup();
+  vehicleSearchForm: VehicleSearchFormGroup = new VehicleSearchFormGroup();
 
   constructor(private router: Router, private vehicleService: VehicleService) {}
 
   ngOnInit() {
     this.cars = this.vehicleService.getVehicles();
+    this.vehicleService.resetFilters();
   }
 
   changeAdvancedSettings(): void {
@@ -35,9 +37,8 @@ export class VehicleSearchComponent implements OnInit {
   }
 
   onSearch(): void {
-    console.log(this.vehicleSearchForm);
-
-    // this.router.navigateByUrl("/vehicle-list");
+    this.vehicleService.setFilters(this.vehicleSearchForm);
+    this.router.navigateByUrl("/vehicle-list");
   }
 
   onAdd(): void {

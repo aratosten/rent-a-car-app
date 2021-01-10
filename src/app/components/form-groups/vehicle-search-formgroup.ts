@@ -1,6 +1,6 @@
 import { FormControl, FormGroup } from '@angular/forms';
 
-export class VechicleSearchFormGroup extends FormGroup {
+export class VehicleSearchFormGroup extends FormGroup {
     constructor () {
         super({
             brand: new FormControl(),

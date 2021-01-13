@@ -1,15 +1,18 @@
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter } from "@angular/core";
 import { VehicleAddFormGroup } from '../components/form-groups/vehicle-add-formgroup';
 import { VehicleSearchFormGroup } from '../components/form-groups/vehicle-search-formgroup';
 import { Color, FuelType, VehicleType } from '../enumerations/enum-constants';
 import { Vehicle } from '../models/vehicle';
 import { VehicleModel } from '../models/vehicle-model';
+import { VehicleSearchFilter } from '../models/vehicle-search-filter';
 
 @Injectable({
   providedIn: "root",
 })
 export class VehicleService {
-  filters: any = {
+  onFilterChange: EventEmitter<any> = new EventEmitter<any>();
+
+  filters: VehicleSearchFilter = {
     brand: null,
     model: null,
     numberOfSeats: null,

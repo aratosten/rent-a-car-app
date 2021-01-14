@@ -58,12 +58,15 @@ export class VehicleService {
   ];
 
   vehicles: Vehicle[] = [
-    {
+    { 
+      id: 1,
       brand: "Porsche",
       model: "Taycan",
       numberOfSeats: 4,
       rentSchedules: [
         {
+          vehicleId: 1,
+          customerId: 1,
           to: new Date('12/12/2020'),
           from: new Date('18/12/2020')
         }
@@ -78,11 +81,14 @@ export class VehicleService {
         "https://www.teslarati.com/wp-content/uploads/2019/03/PorscheTaycan_black_front-e1552066022563.jpg",
     },
     {
+      id: 2,
       brand: "Volkswagen",
       model: "Golf 5",
       numberOfSeats: 5,
       rentSchedules: [
         {
+          vehicleId: 2,
+          customerId: 2,
           to: new Date('12/12/2020'),
           from: new Date('18/12/2020')
         }
@@ -96,11 +102,14 @@ export class VehicleService {
       image: "https://mlfree.com/wp-content/uploads/2017/07/vw_golf_5_01-1.jpg",
     },
     {
+      id: 3,
       brand: "Volvo",
       model: "S60",
       numberOfSeats: 5,
       rentSchedules: [
         {
+          vehicleId: 3,
+          customerId: 3,
           to: new Date('16/12/2020'),
           from: new Date('28/12/2020')
         }
@@ -115,11 +124,14 @@ export class VehicleService {
         "https://upload.wikimedia.org/wikipedia/commons/b/ba/Volvo_S60_II_D3_front_20101002.jpg",
     },
     {
+      id: 4,
       brand: "Renault",
       model: "Megane",
       numberOfSeats: 5,
       rentSchedules: [
         {
+          vehicleId: 4,
+          customerId: 4,
           to: new Date('20/12/2020'),
           from: new Date('30/12/2020')
         }
@@ -134,11 +146,14 @@ export class VehicleService {
         "https://www.renault-klub.hr/forum/uploads/monthly_2018_09/20180909_142415.jpg.bec528daec57c89275f5a8382df550ac.jpg",
     },
     {
+      id: 5,
       brand: "Opel",
       model: "Vectra",
       numberOfSeats: 5,
       rentSchedules: [
         {
+          vehicleId: 5,
+          customerId: 5,
           to: new Date('10/12/2020'),
           from: new Date('18/12/2020')
         }
@@ -153,6 +168,7 @@ export class VehicleService {
         "https://v2h4h4i3.stackpathcdn.com/media/k2/galleries/358/Opel_Vectra_C_rear_20090920.jpg",
     },
     {
+      id: 6,
       brand: "Fiat",
       model: "Punto",
       numberOfSeats: 5,
@@ -168,11 +184,14 @@ export class VehicleService {
         "https://upload.wikimedia.org/wikipedia/commons/3/35/Fiat_Punto_front_20071204.jpg",
     },
     {
+      id: 7,
       brand: "Ford",
       model: "Focus",
       numberOfSeats: 5,
       rentSchedules: [
         {
+          vehicleId: 7,
+          customerId: 7,
           to: new Date('14/12/2020'),
           from: new Date('19/12/2020')
         }
@@ -226,8 +245,13 @@ export class VehicleService {
     return filteredVehicles;
   }
 
+  getNextVehicleId(): number {
+    return this.vehicles.length + 1;
+  }
+
   addVehicle(vehicle: VehicleAddFormGroup): void {
     const newVehicle: Vehicle = {
+      id: this.getNextVehicleId(),
       brand: vehicle.brand.value,
       model: vehicle.model.value,
       numberOfSeats: vehicle.numberOfSeats.value,

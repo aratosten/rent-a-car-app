@@ -2,6 +2,7 @@ import { Color, FuelType, VehicleType } from '../enumerations/enum-constants';
 import { RentSchedule } from './rent-schedule';
 
 export class Vehicle {
+    id: number;
     brand: string;
     model: string;
     numberOfSeats: number;

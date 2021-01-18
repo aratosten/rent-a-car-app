@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="rent-date-list">
+    <app-rent-date-item
+      *ngFor="let date of vehicle.rentSchedules"
+      [rentSchedule]="date"
+    ></app-rent-date-item>
+  </div>
+</div>

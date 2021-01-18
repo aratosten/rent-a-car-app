@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { CustomerAddFormGroup } from 'src/app/components/form-groups/customer-add.formgroup';
+import { Vehicle } from 'src/app/models/vehicle';
+import { CustomvalidationService } from 'src/app/services/customvalidation.service';
+import { VehicleService } from 'src/app/services/vehicle.service';
 
 @Component({
   selector: "app-vehicle-rent",
@@ -7,7 +11,13 @@ import { Router } from "@angular/router";
   styleUrls: ["./vehicle-rent.component.css"],
 })
 export class VehicleRentComponent implements OnInit {
-  constructor(private router: Router) {}
+  customerAddFormGroup: CustomerAddFormGroup = new CustomerAddFormGroup(this.customValidationService);
+  vehicle: Vehicle = this.vehicleService.vehicles[0];
+
+  constructor(
+    private router: Router,
+    private customValidationService: CustomvalidationService,
+    private vehicleService: VehicleService) {}
 
   ngOnInit() {}
 

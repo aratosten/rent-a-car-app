@@ -35,10 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    if (!this.loginForm.form.valid) {
-      this.isInvalidLogin = true;
-      return;
-    }
+    this.isInvalidLogin = false;
+
+    // if (!this.loginForm.form.valid) {
+    //   this.isInvalidLogin = true;
+    //   return;
+    // }
 
     var matchedUser = this.userService.matchUser(this.user);
 

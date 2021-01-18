@@ -32,6 +32,9 @@ export class CustomvalidationService {
 
   matchExistingEmail(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } => {
+      if (!control.value) {
+        return null;
+      }
       var users = this.userService.getUsers();
 
       var result = users.findIndex(user => user.email === control.value);

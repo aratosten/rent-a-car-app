@@ -8,9 +8,20 @@
   background: var(--light-color);
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 70%;
   padding: 40px;
   border-radius: 10px;
+}
+
+.form-group-data {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-group-1,
+.form-group-2 {
+  width: 50%;
+  padding: 2%;
 }
 
 .container h1 {

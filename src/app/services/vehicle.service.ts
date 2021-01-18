@@ -68,7 +68,37 @@ export class VehicleService {
           vehicleId: 1,
           customerId: 1,
           to: new Date('12/12/2020'),
-          from: new Date('18/12/2020')
+          from: new Date('12/18/2020')
+        },
+        {
+          vehicleId: 1,
+          customerId: 1,
+          to: new Date('12/20/2020'),
+          from: new Date('12/22/2020')
+        },
+        {
+          vehicleId: 1,
+          customerId: 1,
+          to: new Date('12/12/2020'),
+          from: new Date('12/18/2020')
+        },
+        {
+          vehicleId: 1,
+          customerId: 1,
+          to: new Date('12/20/2020'),
+          from: new Date('12/22/2020')
+        },
+        {
+          vehicleId: 1,
+          customerId: 1,
+          to: new Date('12/12/2020'),
+          from: new Date('12/18/2020')
+        },
+        {
+          vehicleId: 1,
+          customerId: 1,
+          to: new Date('12/20/2020'),
+          from: new Date('12/22/2020')
         }
       ],
       vehicleType: VehicleType.SEDAN,
@@ -90,7 +120,7 @@ export class VehicleService {
           vehicleId: 2,
           customerId: 2,
           to: new Date('12/12/2020'),
-          from: new Date('18/12/2020')
+          from: new Date('12/18/2020')
         }
       ],
       vehicleType: VehicleType.SEDAN,
@@ -110,8 +140,8 @@ export class VehicleService {
         {
           vehicleId: 3,
           customerId: 3,
-          to: new Date('16/12/2020'),
-          from: new Date('28/12/2020')
+          to: new Date('12/16/2020'),
+          from: new Date('12/28/2020')
         }
       ],
       vehicleType: VehicleType.SEDAN,
@@ -132,8 +162,8 @@ export class VehicleService {
         {
           vehicleId: 4,
           customerId: 4,
-          to: new Date('20/12/2020'),
-          from: new Date('30/12/2020')
+          to: new Date('12/20/2020'),
+          from: new Date('12/30/2020')
         }
       ],
       vehicleType: VehicleType.SEDAN,
@@ -155,7 +185,7 @@ export class VehicleService {
           vehicleId: 5,
           customerId: 5,
           to: new Date('10/12/2020'),
-          from: new Date('18/12/2020')
+          from: new Date('12/18/2020')
         }
       ],
       vehicleType: VehicleType.SEDAN,
@@ -192,8 +222,8 @@ export class VehicleService {
         {
           vehicleId: 7,
           customerId: 7,
-          to: new Date('14/12/2020'),
-          from: new Date('19/12/2020')
+          to: new Date('12/14/2020'),
+          from: new Date('12/19/2020')
         }
       ],
       vehicleType: VehicleType.SEDAN,

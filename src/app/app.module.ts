@@ -21,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatchPasswordDirective } from './directives/match-password.directive';
 import { UserService } from './services/user.service';
 import { ExistingEmailDirective } from './directives/existing-email.directive';
+import { RentDateItemComponent } from './components/vehicle/rent-date-item/rent-date-item.component';
+import { RentDateListComponent } from './components/vehicle/rent-date-list/rent-date-list.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ExistingEmailDirective } from './directives/existing-email.directive';
     UserListItemComponent,
     MatchPasswordDirective,
     ExistingEmailDirective,
+    RentDateItemComponent,
+    RentDateListComponent,
   ],
   imports: [
     BrowserModule,

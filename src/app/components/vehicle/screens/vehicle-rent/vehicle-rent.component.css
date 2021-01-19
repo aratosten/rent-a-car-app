@@ -39,3 +39,17 @@
 .button-container button {
   width: 100%;
 }
+
+.from-field {
+  position: relative;
+}
+
+.to-field {
+  position: relative;
+}
+
+app-rent-date-list {
+  position: absolute;
+  right: -220px;
+  bottom: 5px;
+}

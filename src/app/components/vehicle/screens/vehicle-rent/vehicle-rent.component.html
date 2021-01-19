@@ -1,5 +1,4 @@
 <section id="vehicle-rent">
-  <app-rent-date-list [vehicle]="vehicle"></app-rent-date-list>
   <div class="container">
     <h1>Customer Informations</h1>
     <form
@@ -96,9 +95,19 @@
               Address is required
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group from-field">
             <label for="FromDate">From</label>
-            <input type="datetime-local" formControlName="from" />
+            <input
+              type="datetime-local"
+              formControlName="from"
+              (focus)="onFocus(true)"
+              (focusout)="onFocusOut(true)"
+            />
+            <app-rent-date-list
+              class="rent-date-from"
+              *ngIf="isFromFieldFocused"
+              [vehicle]="vehicle"
+            ></app-rent-date-list>
             <div
               class="alert-danger"
               *ngIf="
@@ -110,9 +119,19 @@
               Starting date is required
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group to-field">
             <label for="ToDate">To</label>
-            <input type="datetime-local" formControlName="to" />
+            <input
+              type="datetime-local"
+              formControlName="to"
+              (focus)="onFocus(false)"
+              (focusout)="onFocusOut(false)"
+            />
+            <app-rent-date-list
+              class="rent-date-to"
+              *ngIf="isToFieldFocused"
+              [vehicle]="vehicle"
+            ></app-rent-date-list>
             <div
               class="alert-danger"
               *ngIf="

@@ -11,6 +11,8 @@ import { VehicleService } from 'src/app/services/vehicle.service';
   styleUrls: ["./vehicle-rent.component.css"],
 })
 export class VehicleRentComponent implements OnInit {
+  isFromFieldFocused: boolean = false;
+  isToFieldFocused: boolean = false;
   customerAddFormGroup: CustomerAddFormGroup = new CustomerAddFormGroup(this.customValidationService);
   vehicle: Vehicle = this.vehicleService.vehicles[0];
 
@@ -28,5 +30,13 @@ export class VehicleRentComponent implements OnInit {
 
   onBack(): void {
     this.router.navigateByUrl("/vehicle-list");
+  }
+
+  onFocus(isFromField: boolean): void {
+    isFromField ? this.isFromFieldFocused = true : this.isToFieldFocused = true;
+  }
+
+  onFocusOut(isFromField: boolean): void {
+    isFromField ? this.isFromFieldFocused = false : this.isToFieldFocused = false;
   }
 }

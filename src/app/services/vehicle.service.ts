@@ -1,10 +1,14 @@
 import { Injectable, EventEmitter } from "@angular/core";
+import { CustomerAddFormGroup } from '../components/form-groups/customer-add.formgroup';
 import { VehicleAddFormGroup } from '../components/form-groups/vehicle-add-formgroup';
 import { VehicleSearchFormGroup } from '../components/form-groups/vehicle-search-formgroup';
 import { Color, FuelType, VehicleType } from '../enumerations/enum-constants';
+import { Customer } from '../models/customer';
+import { RentSchedule } from '../models/rent-schedule';
 import { Vehicle } from '../models/vehicle';
 import { VehicleModel } from '../models/vehicle-model';
 import { VehicleSearchFilter } from '../models/vehicle-search-filter';
+import { CustomerService } from './customer.service';
 
 @Injectable({
   providedIn: "root",
@@ -237,7 +241,7 @@ export class VehicleService {
     },
   ];
 
-  constructor() {}
+  constructor(private customerService: CustomerService) {}
 
   getVehicles(): Vehicle[] {
     var filteredVehicles = this.vehicles.slice();
@@ -338,5 +342,26 @@ export class VehicleService {
       modelYear: vehicleSearchFormGroup.modelYear.value,
       fuelType: vehicleSearchFormGroup.fuelType.value
     };
+  }
+
+  rentVehicle(customerAddFormGroup: CustomerAddFormGroup, vehicleId: number): void {
+    var existingCustomer = this.customerService.getCustomerByPersonId(customerAddFormGroup.personID.value);
+
+    if (!existingCustomer) {
+     existingCustomer = this.customerService.addCustomer(customerAddFormGroup);
+    }
+
+    const rentedVehicle: Vehicle = this.vehicles.find(v => v.id === vehicleId);
+
+    if (rentedVehicle) {
+      const newRentSchedule: RentSchedule = {
+        vehicleId: vehicleId,
+        customerId: existingCustomer.id,
+        to: customerAddFormGroup.to.value,
+        from: customerAddFormGroup.from.value
+      };
+
+      rentedVehicle.rentSchedules.push(newRentSchedule);
+    }
   }
 }

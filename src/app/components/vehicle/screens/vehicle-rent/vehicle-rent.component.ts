@@ -24,6 +24,12 @@ export class VehicleRentComponent implements OnInit {
   ngOnInit() {}
 
   onRent(): void {
+    if (!this.customerAddFormGroup.valid) {
+      return;
+    }
+
+    
+
     this.router.navigateByUrl("/vehicle-list");
     alert("Car rented successfully");
   }

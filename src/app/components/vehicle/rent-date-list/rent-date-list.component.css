@@ -1,11 +1,16 @@
 .container {
-  border: 1px solid var(--dark-color);
+  border: 2px solid var(--dark-color);
   padding: 10px;
   border-radius: 10px;
   background-color: var(--light-color);
   width: 200px;
-  /* opacity: 0.8; */
   position: relative;
+}
+
+p {
+  text-align: center;
+  padding-bottom: 5px;
+  font-weight: bold;
 }
 
 .rent-date-list {

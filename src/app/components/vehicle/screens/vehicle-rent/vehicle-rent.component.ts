@@ -13,8 +13,9 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 export class VehicleRentComponent implements OnInit {
   isFromFieldFocused: boolean = false;
   isToFieldFocused: boolean = false;
-  customerAddFormGroup: CustomerAddFormGroup = new CustomerAddFormGroup(this.customValidationService);
   vehicle: Vehicle = this.vehicleService.vehicles[0];
+  minDate: Date = new Date();
+  customerAddFormGroup: CustomerAddFormGroup = new CustomerAddFormGroup(this.customValidationService, this.vehicle.id);
 
   constructor(
     private router: Router,
@@ -28,7 +29,7 @@ export class VehicleRentComponent implements OnInit {
       return;
     }
 
-    
+
 
     this.router.navigateByUrl("/vehicle-list");
     alert("Car rented successfully");

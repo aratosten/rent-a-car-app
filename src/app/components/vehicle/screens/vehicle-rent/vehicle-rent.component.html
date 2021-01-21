@@ -118,6 +118,26 @@
             >
               Starting date is required
             </div>
+            <div
+              class="alert-danger"
+              *ngIf="
+                (customerAddFormGroup.from.touched ||
+                  customerAddForm.submitted) &&
+                customerAddFormGroup.from.hasError('minimumDate')
+              "
+            >
+              Starting date can not be before today
+            </div>
+            <div
+              class="alert-danger"
+              *ngIf="
+                (customerAddFormGroup.from.touched ||
+                  customerAddForm.submitted) &&
+                customerAddFormGroup.from.hasError('invalidDate')
+              "
+            >
+              Starting date is invalid
+            </div>
           </div>
           <div class="form-group to-field">
             <label for="ToDate">To</label>
@@ -141,6 +161,16 @@
               "
             >
               Ending date is required
+            </div>
+            <div
+              class="alert-danger"
+              *ngIf="
+                (customerAddFormGroup.to.touched ||
+                  customerAddForm.submitted) &&
+                customerAddFormGroup.to.hasError('invalidDate')
+              "
+            >
+              Ending date is invalid
             </div>
           </div>
         </div>

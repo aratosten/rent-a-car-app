@@ -2,7 +2,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomvalidationService } from 'src/app/services/customvalidation.service';
 
 export class CustomerAddFormGroup extends FormGroup {
-    constructor (private customValidationService: CustomvalidationService) {
+    constructor (
+        private customValidationService: CustomvalidationService,
+        private vehicleId: number) {
         super({
             name: new FormControl(null, Validators.required),
             surname: new FormControl(null, Validators.required),
@@ -10,8 +12,8 @@ export class CustomerAddFormGroup extends FormGroup {
             email: new FormControl(null, [Validators.required, Validators.email, customValidationService.matchExistingEmail]),
             phone: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(10)]),
             address: new FormControl(null, Validators.required),
-            from: new FormControl(null, Validators.required),
-            to: new FormControl(null, Validators.required)
+            from: new FormControl(null, [ Validators.required, customValidationService.checkMinimumDate(), customValidationService.checkDateValidity(vehicleId) ]),
+            to: new FormControl(null, [ Validators.required, customValidationService.checkDateValidity(vehicleId) ])
         });
     }
 

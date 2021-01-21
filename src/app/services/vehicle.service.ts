@@ -71,38 +71,26 @@ export class VehicleService {
         {
           vehicleId: 1,
           customerId: 1,
-          to: new Date('12/12/2020'),
-          from: new Date('12/18/2020')
+          from: new Date('12/12/2020'),
+          to: new Date('12/18/2020')
         },
         {
           vehicleId: 1,
           customerId: 1,
-          to: new Date('12/20/2020'),
-          from: new Date('12/22/2020')
+          from: new Date('1/2/2021'),
+          to: new Date('1/6/2021')
         },
         {
           vehicleId: 1,
           customerId: 1,
-          to: new Date('12/12/2020'),
-          from: new Date('12/18/2020')
+          from: new Date('1/7/2021'),
+          to: new Date('1/9/2021')
         },
         {
           vehicleId: 1,
           customerId: 1,
-          to: new Date('12/20/2020'),
-          from: new Date('12/22/2020')
-        },
-        {
-          vehicleId: 1,
-          customerId: 1,
-          to: new Date('12/12/2020'),
-          from: new Date('12/18/2020')
-        },
-        {
-          vehicleId: 1,
-          customerId: 1,
-          to: new Date('12/20/2020'),
-          from: new Date('12/22/2020')
+          from: new Date('1/10/2021'),
+          to: new Date('1/25/2021')
         }
       ],
       vehicleType: VehicleType.SEDAN,
@@ -277,6 +265,10 @@ export class VehicleService {
     }
 
     return filteredVehicles;
+  }
+
+  getVehicleById(vehicleId: number): Vehicle {
+    return this.vehicles.find(v => v.id === vehicleId);
   }
 
   getNextVehicleId(): number {

@@ -1,0 +1,32 @@
+.container {
+  border: 2px solid var(--dark-color);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--light-color);
+  width: 200px;
+  position: relative;
+}
+
+p {
+  text-align: center;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.rent-date-list {
+  border-radius: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.container:before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  left: -16px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent var(--dark-color) transparent transparent;
+}

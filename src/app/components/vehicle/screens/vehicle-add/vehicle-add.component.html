@@ -2,61 +2,176 @@
   <div class="vehicle-add">
     <div class="container">
       <h1>Add Vehicle</h1>
-      <form action="submit">
-        <div class="form-group">
-          <label for="brandInput">Brand</label>
-          <input type="text" list="brands" />
-          <datalist id="brands">
-            <option *ngFor="let car of cars" [value]="car.brand">
-              {{ car.brand }}
-            </option>
-          </datalist>
+      <form [formGroup]="vehicleAddForm" #addForm="ngForm" (ngSubmit)="onAdd()">
+        <div class="form-group-data">
+          <div class="form-group-1">
+            <div class="form-group">
+              <label for="brandInput">Brand</label>
+              <input
+                type="text"
+                list="vehicleBrands"
+                formControlName="brand"
+                (focusout)="onBrandChanged()"
+              />
+              <datalist id="vehicleBrands">
+                <option *ngFor="let brand of vehicleBrands" [value]="brand">
+                  {{ brand }}
+                </option>
+              </datalist>
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.brand.touched || addForm.submitted) &&
+                  vehicleAddForm.brand.hasError('required')
+                "
+              >
+                Brand is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="modelInput">Model</label>
+              <input type="text" list="vehicleModels" formControlName="model" />
+              <datalist id="vehicleModels">
+                <option *ngFor="let model of vehicleModels" [value]="model">
+                  {{ model }}
+                </option>
+              </datalist>
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.model.touched || addForm.submitted) &&
+                  vehicleAddForm.model.hasError('required')
+                "
+              >
+                Model is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="numberOfSeatsInput">Number of seats</label>
+              <input
+                type="number"
+                min="1"
+                max="12"
+                formControlName="numberOfSeats"
+              />
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.numberOfSeats.touched || addForm.submitted) &&
+                  vehicleAddForm.numberOfSeats.hasError('required')
+                "
+              >
+                Number of seats is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="vehicleTypeInput">Vehicle Type</label>
+              <select formControlName="vehicleType">
+                <option
+                  *ngFor="let vehicleType of vehicleTypes"
+                  [value]="vehicleType"
+                >
+                  {{ vehicleType }}
+                </option>
+              </select>
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.vehicleType.touched || addForm.submitted) &&
+                  vehicleAddForm.vehicleType.hasError('required')
+                "
+              >
+                Vehicle type is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="modelYearInput">Model Year</label>
+              <input
+                type="number"
+                min="1950"
+                max="2021"
+                formControlName="modelYear"
+              />
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.modelYear.touched || addForm.submitted) &&
+                  vehicleAddForm.modelYear.hasError('required')
+                "
+              >
+                Model year is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group-2">
+            <div class="form-group">
+              <label for="fuelTypeInput">Fuel Type</label>
+              <select formControlName="fuelType">
+                <option *ngFor="let fuelType of fuelTypes" [value]="fuelType">
+                  {{ fuelType }}
+                </option>
+              </select>
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.fuelType.touched || addForm.submitted) &&
+                  vehicleAddForm.fuelType.hasError('required')
+                "
+              >
+                Fuel type is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="colorInput">Color</label>
+              <input type="text" list="colors" formControlName="color" />
+              <datalist id="colors">
+                <option *ngFor="let color of colors" [value]="color">
+                  {{ color }}
+                </option>
+              </datalist>
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.color.touched || addForm.submitted) &&
+                  vehicleAddForm.color.hasError('required')
+                "
+              >
+                Color is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="locationInput">Location</label>
+              <input
+                type="text"
+                id="locationInput"
+                formControlName="location"
+              />
+            </div>
+            <div class="form-group">
+              <label for="plateNumberInput">Plate Number</label>
+              <input
+                type="text"
+                id="plateNumberInput"
+                formControlName="plateNumber"
+              />
+              <div
+                class="alert-danger"
+                *ngIf="
+                  (vehicleAddForm.plateNumber.touched || addForm.submitted) &&
+                  vehicleAddForm.plateNumber.hasError('required')
+                "
+              >
+                Plate number is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="imageInput">Image</label>
+              <input type="text" id="imageInput" formControlName="image" />
+            </div>
+          </div>
         </div>
         <div class="form-group">
-          <label for="modelInput">Model</label>
-          <input type="text" list="models" />
-          <datalist id="models">
-            <option *ngFor="let car of cars" [value]="car.model">
-              {{ car.model }}
-            </option>
-          </datalist>
-        </div>
-        <div class="form-group">
-          <label for="numberOfSeatsInput">Number of seats</label>
-          <input type="number" min="1" max="12" />
-        </div>
-        <div class="form-group">
-          <label for="FromDate">From</label>
-          <input type="datetime-local" />
-        </div>
-        <div class="form-group">
-          <label for="ToDate">To</label>
-          <input type="datetime-local" />
-        </div>
-        <div class="form-group">
-          <label for="vehicleTypeInput">Vehicle Type</label>
-          <input type="text" list="vehicleTypes" />
-          <datalist id="vehicleTypes">
-            <option *ngFor="let car of cars" [value]="car.vehicleType">
-              {{ car.vehicleType }}
-            </option>
-          </datalist>
-        </div>
-        <div class="form-group">
-          <label for="modelYearInput">Model Year</label>
-          <input type="number" min="1950" max="2021" />
-        </div>
-        <div class="form-group">
-          <label for="fuelTypeInput">Fuel Type</label>
-          <input type="text" list="fuelType" />
-          <datalist id="fuelType">
-            <option *ngFor="let car of cars" [value]="car.fuelType">
-              {{ car.fuelType }}
-            </option>
-          </datalist>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-primary" (click)="onAdd()">Add</button>
+          <button type="submit" class="btn btn-primary">Add</button>
         </div>
       </form>
     </div>

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { VehicleDetailsComponent } from "src/app/components/popups/vehicle-details/vehicle-details.component";
+import { Vehicle } from 'src/app/models/vehicle';
 import { VehicleService } from "src/app/services/vehicle.service";
 
 @Component({
@@ -11,7 +12,7 @@ import { VehicleService } from "src/app/services/vehicle.service";
   styleUrls: ["./vehicle-list.component.css"],
 })
 export class VehicleListComponent implements OnInit {
-  cars: any[];
+  cars: Vehicle[];
 
   constructor(
     private matDialog: MatDialog,
@@ -21,6 +22,7 @@ export class VehicleListComponent implements OnInit {
 
   ngOnInit() {
     this.cars = this.vehicleService.getVehicles();
+    this.vehicleService.onFilterChange.subscribe(() => this.cars = this.vehicleService.getVehicles());
   }
 
   onVehicle(index: number): Observable<any> {

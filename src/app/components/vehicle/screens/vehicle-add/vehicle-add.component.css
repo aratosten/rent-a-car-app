@@ -5,10 +5,21 @@
 }
 
 .container {
-  width: 40%;
+  width: 70%;
   background-color: var(--light-color);
   padding: 40px;
   border-radius: 10px;
+}
+
+.form-group-data {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-group-1,
+.form-group-2 {
+  width: 50%;
+  padding: 2%;
 }
 
 h1 {

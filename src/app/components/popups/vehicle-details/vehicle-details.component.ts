@@ -24,7 +24,7 @@ export class VehicleDetailsComponent implements OnInit {
   }
 
   onSelect(): void {
-    this.router.navigateByUrl("vehicle-rent");
+    this.router.navigate(["vehicle-rent"], this.car);
     this.dialogRef.close();
   }
 }

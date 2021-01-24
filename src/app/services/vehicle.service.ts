@@ -356,4 +356,16 @@ export class VehicleService {
       rentedVehicle.rentSchedules.push(newRentSchedule);
     }
   }
+
+  isVehicleAvailable(vehicle: Vehicle): boolean {
+    var today = new Date();
+    
+    vehicle.rentSchedules.forEach(rent => {
+        if (rent.from >= today && rent.to <= today) {
+            return false;
+        }
+    });
+
+    return true;
+}
 }

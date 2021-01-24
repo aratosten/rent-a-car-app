@@ -33,6 +33,8 @@ export class VehicleRentComponent implements OnInit {
       return;
     }
 
+    this.vehicleService.rentVehicle(this.customerAddFormGroup, this.vehicle.id);
+
     this.router.navigateByUrl("/vehicle-list");
     alert("Car rented successfully");
   }

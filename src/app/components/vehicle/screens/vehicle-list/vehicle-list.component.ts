@@ -32,7 +32,7 @@ export class VehicleListComponent implements OnInit {
         panelClass: "dialog-box",
         autoFocus: false,
         data: {
-          car: this.cars[index],
+          car: this.cars[index]
         },
       }
     );

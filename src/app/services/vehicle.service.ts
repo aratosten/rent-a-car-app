@@ -349,8 +349,8 @@ export class VehicleService {
       const newRentSchedule: RentSchedule = {
         vehicleId: vehicleId,
         customerId: existingCustomer.id,
-        to: customerAddFormGroup.to.value,
-        from: customerAddFormGroup.from.value
+        to: new Date(customerAddFormGroup.to.value),
+        from: new Date(customerAddFormGroup.from.value)
       };
 
       rentedVehicle.rentSchedules.push(newRentSchedule);
@@ -359,13 +359,12 @@ export class VehicleService {
 
   isVehicleAvailable(vehicle: Vehicle): boolean {
     var today = new Date();
-    
-    vehicle.rentSchedules.forEach(rent => {
-        if (rent.from >= today && rent.to <= today) {
-            return false;
-        }
-    });
 
+    for (let rentSchedule of vehicle.rentSchedules) {
+      if (rentSchedule.from <= today && rentSchedule.to >= today) {
+        return false;
+      }
+    }
     return true;
-}
+  }
 }

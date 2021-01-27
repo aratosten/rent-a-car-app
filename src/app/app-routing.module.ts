@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { UserAddComponent } from "./components/user/user-add/user-add.component";
-import { UserSearchComponent } from "./components/user/user-search/user-search.component";
+import { EmployeeAddComponent } from "./components/employee/employee-add/employee-add.component";
+import { EmployeeSearchComponent } from "./components/employee/employee-search/employee-search.component";
 import { VehicleAddComponent } from "./components/vehicle/screens/vehicle-add/vehicle-add.component";
 import { VehicleListComponent } from "./components/vehicle/screens/vehicle-list/vehicle-list.component";
 import { VehicleRentComponent } from "./components/vehicle/screens/vehicle-rent/vehicle-rent.component";
@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: "vehicle-list", component: VehicleListComponent },
   { path: "vehicle-add", component: VehicleAddComponent },
   { path: "vehicle-rent", component: VehicleRentComponent },
-  { path: "user-search", component: UserSearchComponent },
-  { path: "user-add", component: UserAddComponent },
+  { path: "employee-search", component: EmployeeSearchComponent },
+  { path: "user-add", component: EmployeeAddComponent },
   { path: "**", redirectTo: "login", pathMatch: "full" },
 ];
 

@@ -3,13 +3,13 @@ import { MatDialogRef } from "@angular/material/dialog";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-user-details",
-  templateUrl: "./user-details.component.html",
-  styleUrls: ["./user-details.component.css"],
+  selector: "app-employee-details",
+  templateUrl: "./employee-details.component.html",
+  styleUrls: ["./employee-details.component.css"],
 })
-export class UserDetailsComponent implements OnInit {
+export class EmployeeDetailsComponent implements OnInit {
   constructor(
-    private dialogRef: MatDialogRef<UserDetailsComponent>,
+    private dialogRef: MatDialogRef<EmployeeDetailsComponent>,
     private router: Router
   ) {}
 
@@ -20,7 +20,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   onUpdate(): void {
-    this.router.navigateByUrl("user-list");
+    this.router.navigateByUrl("employee-list");
     this.dialogRef.close();
   }
 }

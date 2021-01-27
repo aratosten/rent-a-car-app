@@ -13,13 +13,13 @@ import { VehicleListComponent } from "./components/vehicle/screens/vehicle-list/
 import { VehicleSearchComponent } from "./components/vehicle/screens/vehicle-search/vehicle-search.component";
 import { VehicleListFilterComponent } from "./components/vehicle/vehicle-list-filter/vehicle-list-filter.component";
 import { VehicleListItemComponent } from "./components/vehicle/vehicle-list-item/vehicle-list-item.component";
-import { UserSearchComponent } from "./components/user/user-search/user-search.component";
-import { UserAddComponent } from "./components/user/user-add/user-add.component";
-import { UserDetailsComponent } from "./components/popups/user-details/user-details.component";
-import { UserListItemComponent } from "./components/user/user-list-item/user-list-item.component";
+import { EmployeeSearchComponent } from "./components/employee/employee-search/employee-search.component";
+import { EmployeeAddComponent } from "./components/employee/employee-add/employee-add.component";
+import { EmployeeDetailsComponent } from "./components/popups/employee-details/employee-details.component";
+import { EmployeeListItemComponent } from "./components/employee/employee-list-item/employee-list-item.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatchPasswordDirective } from './directives/match-password.directive';
-import { UserService } from './services/user.service';
+import { EmployeeService } from './services/employee.service';
 import { ExistingEmailDirective } from './directives/existing-email.directive';
 import { RentDateItemComponent } from './components/vehicle/rent-date-item/rent-date-item.component';
 import { RentDateListComponent } from './components/vehicle/rent-date-list/rent-date-list.component';
@@ -35,10 +35,10 @@ import { RentDateListComponent } from './components/vehicle/rent-date-list/rent-
     VehicleDetailsComponent,
     LoginComponent,
     VehicleRentComponent,
-    UserSearchComponent,
-    UserAddComponent,
-    UserDetailsComponent,
-    UserListItemComponent,
+    EmployeeSearchComponent,
+    EmployeeAddComponent,
+    EmployeeDetailsComponent,
+    EmployeeListItemComponent,
     MatchPasswordDirective,
     ExistingEmailDirective,
     RentDateItemComponent,
@@ -52,8 +52,8 @@ import { RentDateListComponent } from './components/vehicle/rent-date-list/rent-
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UserService],
+  providers: [EmployeeService],
   bootstrap: [AppComponent],
-  entryComponents: [VehicleDetailsComponent, UserDetailsComponent],
+  entryComponents: [VehicleDetailsComponent, EmployeeDetailsComponent],
 })
 export class AppModule {}

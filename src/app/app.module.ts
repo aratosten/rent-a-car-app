@@ -19,7 +19,7 @@ import { EmployeeDetailsComponent } from "./components/popups/employee-details/e
 import { EmployeeListItemComponent } from "./components/employee/employee-list-item/employee-list-item.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatchPasswordDirective } from './directives/match-password.directive';
-import { EmployeeService } from './services/employee.service';
+import { UserService } from './services/user.service';
 import { ExistingEmailDirective } from './directives/existing-email.directive';
 import { RentDateItemComponent } from './components/vehicle/rent-date-item/rent-date-item.component';
 import { RentDateListComponent } from './components/vehicle/rent-date-list/rent-date-list.component';
@@ -52,7 +52,7 @@ import { RentDateListComponent } from './components/vehicle/rent-date-list/rent-
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [EmployeeService],
+  providers: [UserService],
   bootstrap: [AppComponent],
   entryComponents: [VehicleDetailsComponent, EmployeeDetailsComponent],
 })

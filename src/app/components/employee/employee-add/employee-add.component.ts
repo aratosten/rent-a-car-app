@@ -1,6 +1,8 @@
 import { Location } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { CustomvalidationService } from 'src/app/services/customvalidation.service';
+import { EmployeeAddFormGroup } from '../../form-groups/employee-add.formgroup';
 
 @Component({
   selector: "app-employee-add",
@@ -8,7 +10,12 @@ import { Router } from "@angular/router";
   styleUrls: ["./employee-add.component.css"],
 })
 export class EmployeeAddComponent implements OnInit {
-  constructor(private router: Router, private location: Location) {}
+  employeeAddFormGroup: EmployeeAddFormGroup = new EmployeeAddFormGroup(this.customValidationService);
+
+  constructor(
+    private router: Router, 
+    private location: Location,
+    private customValidationService: CustomvalidationService) {}
 
   ngOnInit() {}
 

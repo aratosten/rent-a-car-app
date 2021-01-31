@@ -6,7 +6,7 @@ export class EmployeeAddFormGroup extends FormGroup {
         super({
             name: new FormControl(null, Validators.required),
             surname: new FormControl(null, Validators.required),
-            personId: new FormControl(null, Validators.required),
+            personID: new FormControl(null, Validators.required),
             email: new FormControl(null, [Validators.required, Validators.email, customValidationService.matchExistingEmail]),
             phone: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(10)]),
             address: new FormControl(null, Validators.required),
@@ -23,8 +23,8 @@ export class EmployeeAddFormGroup extends FormGroup {
         return this.get('surname') as FormControl;
     }
 
-    public get personId(): FormControl {
-        return this.get('personId') as FormControl;
+    public get personID(): FormControl {
+        return this.get('personID') as FormControl;
     }
 
     public get email(): FormControl {

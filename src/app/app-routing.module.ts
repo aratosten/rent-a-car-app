@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: "vehicle-add", component: VehicleAddComponent },
   { path: "vehicle-rent", component: VehicleRentComponent },
   { path: "employee-search", component: EmployeeSearchComponent },
-  { path: "user-add", component: EmployeeAddComponent },
+  { path: "employee-add", component: EmployeeAddComponent },
   { path: "**", redirectTo: "login", pathMatch: "full" },
 ];
 

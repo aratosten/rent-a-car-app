@@ -35,13 +35,13 @@
       </div>
       <div class="form-group">
         <label for="personId">ID</label>
-        <input type="text" id="id" formControlName="personId" />
+        <input type="text" id="personId" formControlName="personID" />
         <div
           class="alert-danger"
           *ngIf="
-            (employeeAddFormGroup.personId.touched ||
+            (employeeAddFormGroup.personID.touched ||
               employeeAddForm.submitted) &&
-            employeeAddFormGroup.personId.hasError('required')
+            employeeAddFormGroup.personID.hasError('required')
           "
         >
           Person ID is required

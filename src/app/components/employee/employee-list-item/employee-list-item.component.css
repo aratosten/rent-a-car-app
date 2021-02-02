@@ -1,6 +1,6 @@
 #employee-list-item {
   height: 120px;
-  width: 400px;
+  width: 100%;
   background: var(--light-color);
   border-radius: 10px;
   margin: 10px 0;

@@ -13,6 +13,7 @@ import { EmployeeDetailsComponent } from "../../popups/employee-details/employee
 })
 export class EmployeeSearchComponent implements OnInit {
   employees: Employee[] = [];
+  allEmployees: Employee[] = [];
 
   constructor(
     private matDialog: MatDialog, 
@@ -21,6 +22,7 @@ export class EmployeeSearchComponent implements OnInit {
 
   ngOnInit() {
     this.employees = this.employeeService.getEmployees();
+    this.allEmployees = this.employeeService.getEmployees();
   }
 
   onEmployee(): Observable<any> {
@@ -37,5 +39,19 @@ export class EmployeeSearchComponent implements OnInit {
 
   onAdd(): void {
     this.router.navigateByUrl("/employee-add");
+  }
+
+  onSearchChange(event): void {
+    const value: string = event.target.value.toLowerCase();
+    
+    if (value === '') {
+      this.employees = [...this.allEmployees];
+    } else {
+      this.employees = this.allEmployees.filter(e => 
+        e.name.toLowerCase().startsWith(value) || 
+        e.surname.toLowerCase().startsWith(value) || 
+        e.name.concat(' ', e.surname).toLowerCase().startsWith(value)
+      );
+    }
   }
 }

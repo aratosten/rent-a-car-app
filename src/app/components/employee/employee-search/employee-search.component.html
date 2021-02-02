@@ -2,7 +2,7 @@
   <div class="container">
     <div class="input-search">
       <i class="fa fa-search"></i>
-      <input type="text" />
+      <input type="text" (input)="onSearchChange($event)" />
     </div>
     <div class="employee-list">
       <app-employee-list-item

@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { MatDialogRef } from "@angular/material/dialog";
+import { Component, Inject, INJECTOR, OnInit } from "@angular/core";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { Employee } from 'src/app/models/employee';
 
 @Component({
   selector: "app-employee-details",
@@ -8,9 +9,12 @@ import { Router } from "@angular/router";
   styleUrls: ["./employee-details.component.css"],
 })
 export class EmployeeDetailsComponent implements OnInit {
+  employee: Employee = this.data['employee'];
+
   constructor(
     private dialogRef: MatDialogRef<EmployeeDetailsComponent>,
-    private router: Router
+    private router: Router,
+    @Inject(MAT_DIALOG_DATA) private data: any
   ) {}
 
   ngOnInit() {}

@@ -5,12 +5,12 @@
       alt="User Image"
     />
     <div class="column">
-      <h1>Edin Dzeko</h1>
-      <p><b>Address: </b>Sarajevo, Zmaja od Bosne bb</p>
-      <p><b>Phone Number: </b>+387 61 123 456</p>
-      <p><b>ID: </b>12121912110055</p>
-      <p><b>Position: </b>Administration</p>
-      <p><b>Starting Date: </b>01/01/2020</p>
+      <h1>{{ employee.name }} {{ employee.surname }}</h1>
+      <p><b>Address: </b>{{ employee.address }}</p>
+      <p><b>Phone Number: </b>{{ employee.phoneNumber }}</p>
+      <p><b>ID: </b>{{ employee.personId }}</p>
+      <p><b>Position: </b>{{ employee.position }}</p>
+      <p><b>Starting Date: </b>{{ employee.startingDate.toDateString() }}</p>
     </div>
   </div>
   <div class="buttons">

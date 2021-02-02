@@ -25,12 +25,15 @@ export class EmployeeSearchComponent implements OnInit {
     this.allEmployees = this.employeeService.getEmployees();
   }
 
-  onEmployee(): Observable<any> {
+  onEmployee(index: number): Observable<any> {
     const dialogRef: MatDialogRef<EmployeeDetailsComponent> = this.matDialog.open(
       EmployeeDetailsComponent,
       {
         panelClass: "dialog-box",
         autoFocus: false,
+        data: {
+          employee: this.employees[index] as Employee
+        }
       }
     );
 

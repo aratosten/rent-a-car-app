@@ -6,8 +6,8 @@
     </div>
     <div class="employee-list">
       <app-employee-list-item
-        *ngFor="let employee of employees"
-        (click)="onEmployee()"
+        *ngFor="let employee of employees; let i = index"
+        (click)="onEmployee(i)"
         [employee]="employee"
       ></app-employee-list-item>
     </div>

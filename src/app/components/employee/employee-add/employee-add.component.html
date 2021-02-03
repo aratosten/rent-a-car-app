@@ -116,7 +116,9 @@
       </div>
 
       <div class="button-container">
-        <button class="btn btn-primary" (click)="onAdd()">Add</button>
+        <button class="btn btn-primary" (click)="onAddOrUpdate()">
+          {{ isUpdating ? "Update" : "Add" }}
+        </button>
       </div>
     </form>
   </div>

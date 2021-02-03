@@ -9,7 +9,7 @@ import { Employee } from 'src/app/models/employee';
   styleUrls: ["./employee-details.component.css"],
 })
 export class EmployeeDetailsComponent implements OnInit {
-  employee: Employee = this.data['employee'];
+  employee: any = this.data['employee'] as Employee;
 
   constructor(
     private dialogRef: MatDialogRef<EmployeeDetailsComponent>,
@@ -24,7 +24,7 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   onUpdate(): void {
-    this.router.navigateByUrl("employee-list");
+    this.router.navigate(["employee-add"], this.employee);
     this.dialogRef.close();
   }
 }

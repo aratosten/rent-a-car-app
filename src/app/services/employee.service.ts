@@ -31,6 +31,10 @@ export class EmployeeService {
     return [...this.employees];
   }
 
+  getEmployeeIndexById(employeeId: number): number {
+    return this.employees.findIndex(e => e.id === employeeId);
+  }
+
   addEmployee(employeeAddFormGroup: EmployeeAddFormGroup): void {
     const newEmployee: Employee = {
       id: this.getNextEmployeeId(),
@@ -45,6 +49,28 @@ export class EmployeeService {
     };
 
     this.employees.push(newEmployee);
+  }
+
+  updateEmployee(employeeId: number, employeeAddFormGroup: EmployeeAddFormGroup): Employee {
+    var updatedEmployeeIndex: number = this.getEmployeeIndexById(employeeId);
+
+    if (updatedEmployeeIndex === -1) {
+      return null;
+    }
+
+    this.employees[updatedEmployeeIndex] = {
+      id: employeeId,
+      name: employeeAddFormGroup.name.value,
+      surname: employeeAddFormGroup.surname.value,
+      personId: employeeAddFormGroup.personID.value,
+      email: employeeAddFormGroup.email.value,
+      phoneNumber: employeeAddFormGroup.phone.value,
+      address: employeeAddFormGroup.address.value,
+      position: employeeAddFormGroup.position.value,
+      startingDate: employeeAddFormGroup.from.value
+    };
+
+    return this.employees[updatedEmployeeIndex];
   }
 
 }

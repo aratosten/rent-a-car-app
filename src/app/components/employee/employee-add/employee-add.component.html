@@ -1,0 +1,133 @@
+<section id="employee-add">
+  <div class="container">
+    <h1>Employee Informations</h1>
+    <form
+      [formGroup]="employeeAddFormGroup"
+      (ngSubmit)="onAdd()"
+      #employeeAddForm="ngForm"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.name.touched || employeeAddForm.submitted) &&
+            employeeAddFormGroup.name.hasError('required')
+          "
+        >
+          Name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" id="surname" formControlName="surname" />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.surname.touched ||
+              employeeAddForm.submitted) &&
+            employeeAddFormGroup.surname.hasError('required')
+          "
+        >
+          Surname is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personId">ID</label>
+        <input type="text" id="personId" formControlName="personID" />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.personID.touched ||
+              employeeAddForm.submitted) &&
+            employeeAddFormGroup.personID.hasError('required')
+          "
+        >
+          Person ID is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" formControlName="email" />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.email.touched || employeeAddForm.submitted) &&
+            employeeAddFormGroup.email.hasError('required')
+          "
+        >
+          Email is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" id="phoneNumber" formControlName="phone" />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.phone.touched || employeeAddForm.submitted) &&
+            employeeAddFormGroup.phone.hasError('required')
+          "
+        >
+          Phone is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" formControlName="address" />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.address.touched ||
+              employeeAddForm.submitted) &&
+            employeeAddFormGroup.address.hasError('required')
+          "
+        >
+          Address is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="position">Position</label>
+        <select formControlName="position">
+          <option *ngFor="let position of employeePositions" [value]="position">
+            {{ position }}
+          </option>
+        </select>
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.position.touched ||
+              employeeAddForm.submitted) &&
+            employeeAddFormGroup.position.hasError('required')
+          "
+        >
+          Position is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="startingDate">Starting Date</label>
+        <input type="datetime-local" id="startingDate" formControlName="from" />
+        <div
+          class="alert-danger"
+          *ngIf="
+            (employeeAddFormGroup.from.touched || employeeAddForm.submitted) &&
+            employeeAddFormGroup.from.hasError('required')
+          "
+        >
+          Starting date is required
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="btn btn-primary" (click)="onAddOrUpdate()">
+          {{ isUpdating ? "Update" : "Add" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="back-button">
+  <button class="btn-round back-button" (click)="onBack()">&#x2190;</button>
+</section>

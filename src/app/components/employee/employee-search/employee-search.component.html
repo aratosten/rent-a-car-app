@@ -1,0 +1,19 @@
+<section id="employee-search">
+  <div class="container">
+    <div class="input-search">
+      <i class="fa fa-search"></i>
+      <input type="text" (input)="onSearchChange($event)" />
+    </div>
+    <div class="employee-list">
+      <app-employee-list-item
+        *ngFor="let employee of employees; let i = index"
+        (click)="onEmployee(i)"
+        [employee]="employee"
+      ></app-employee-list-item>
+    </div>
+  </div>
+</section>
+
+<footer id="employee-search-footer">
+  <button class="btn-round" (click)="onAdd()">+</button>
+</footer>

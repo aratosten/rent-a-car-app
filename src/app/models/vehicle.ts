@@ -14,15 +14,4 @@ export class Vehicle {
     location: string;
     plateNumber: string;
     image: string;
-
-    isAvailable?(): boolean {
-        var today = new Date();
-        this.rentSchedules.forEach(rent => {
-            if (rent.from >= today && rent.to <= today) {
-                return false;
-            }
-        });
-
-        return true;
-    }
 }

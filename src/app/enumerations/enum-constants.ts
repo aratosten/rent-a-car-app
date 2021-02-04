@@ -26,3 +26,8 @@ export enum AdvancedArrow {
   Up = 8593,
   Down = 8595,
 }
+
+export enum EmployeePosition {
+  MANAGER = "Manager",
+  EMPLOYEE = "Employee"
+}

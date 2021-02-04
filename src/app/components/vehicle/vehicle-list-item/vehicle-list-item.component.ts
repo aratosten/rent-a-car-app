@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
+import { VehicleService } from 'src/app/services/vehicle.service';
 
 @Component({
   selector: "app-vehicle-list-item",
@@ -8,10 +9,13 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 export class VehicleListItemComponent implements OnInit {
   @ViewChild("vehicleListItem", { static: false }) vehicleListItem: ElementRef;
   @Input() vehicle;
+  isVehicleAvailable: boolean = false;
 
-  constructor() {}
+  constructor(private vehicleService: VehicleService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isVehicleAvailable = this.vehicleService.isVehicleAvailable(this.vehicle);
+  }
 
   open() {}
 }

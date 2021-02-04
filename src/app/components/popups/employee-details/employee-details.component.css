@@ -1,4 +1,4 @@
-#user-details {
+#employee-details {
   display: flex;
   flex-direction: column;
   width: 720px;
@@ -6,7 +6,7 @@
   border-radius: 10px;
 }
 
-#user-details .container {
+#employee-details .container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -14,28 +14,28 @@
   height: 85%;
 }
 
-#user-details img {
+#employee-details img {
   border-radius: 15px;
   height: 80%;
   width: 30%;
 }
 
-#user-details .column {
+#employee-details .column {
   margin-bottom: 25px;
 }
 
-#user-details h1 {
+#employee-details h1 {
   text-align: center;
   font-size: 35px;
   padding: 5px 0;
 }
 
-#user-details p {
+#employee-details p {
   font-size: 20px;
   padding: 3px 0;
 }
 
-#user-details .buttons {
+#employee-details .buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -43,7 +43,7 @@
   height: 15%;
 }
 
-#user-details .buttons button {
+#employee-details .buttons button {
   width: 100px;
   height: 50px;
   margin: 0 5px;

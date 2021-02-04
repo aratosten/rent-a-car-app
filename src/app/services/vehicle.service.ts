@@ -73,25 +73,25 @@ export class VehicleService {
           customerId: 1,
           from: new Date('12/12/2020'),
           to: new Date('12/18/2020')
-        },
+        } as RentSchedule,
         {
           vehicleId: 1,
           customerId: 1,
           from: new Date('1/2/2021'),
           to: new Date('1/6/2021')
-        },
+        } as RentSchedule,
         {
           vehicleId: 1,
           customerId: 1,
           from: new Date('1/7/2021'),
           to: new Date('1/9/2021')
-        },
+        } as RentSchedule,
         {
           vehicleId: 1,
           customerId: 1,
           from: new Date('1/10/2021'),
           to: new Date('1/25/2021')
-        }
+        } as RentSchedule
       ],
       vehicleType: VehicleType.SEDAN,
       modelYear: 2020,
@@ -113,7 +113,7 @@ export class VehicleService {
           customerId: 2,
           to: new Date('12/12/2020'),
           from: new Date('12/18/2020')
-        }
+        } as RentSchedule
       ],
       vehicleType: VehicleType.SEDAN,
       modelYear: 2018,
@@ -134,7 +134,7 @@ export class VehicleService {
           customerId: 3,
           to: new Date('12/16/2020'),
           from: new Date('12/28/2020')
-        }
+        } as RentSchedule
       ],
       vehicleType: VehicleType.SEDAN,
       modelYear: 2005,
@@ -156,7 +156,7 @@ export class VehicleService {
           customerId: 4,
           to: new Date('12/20/2020'),
           from: new Date('12/30/2020')
-        }
+        } as RentSchedule
       ],
       vehicleType: VehicleType.SEDAN,
       modelYear: 2010,
@@ -178,7 +178,7 @@ export class VehicleService {
           customerId: 5,
           to: new Date('10/12/2020'),
           from: new Date('12/18/2020')
-        }
+        } as RentSchedule
       ],
       vehicleType: VehicleType.SEDAN,
       modelYear: 2006,
@@ -194,8 +194,7 @@ export class VehicleService {
       brand: "Fiat",
       model: "Punto",
       numberOfSeats: 5,
-      rentSchedules: [
-      ],
+      rentSchedules: [],
       vehicleType: VehicleType.SEDAN,
       modelYear: 2012,
       fuelType: FuelType.DIESEL,
@@ -216,7 +215,7 @@ export class VehicleService {
           customerId: 7,
           to: new Date('12/14/2020'),
           from: new Date('12/19/2020')
-        }
+        } as RentSchedule
       ],
       vehicleType: VehicleType.SEDAN,
       modelYear: 2008,
@@ -349,11 +348,22 @@ export class VehicleService {
       const newRentSchedule: RentSchedule = {
         vehicleId: vehicleId,
         customerId: existingCustomer.id,
-        to: customerAddFormGroup.to.value,
-        from: customerAddFormGroup.from.value
-      };
+        to: new Date(customerAddFormGroup.to.value),
+        from: new Date(customerAddFormGroup.from.value)
+      } as RentSchedule;
 
       rentedVehicle.rentSchedules.push(newRentSchedule);
     }
+  }
+
+  isVehicleAvailable(vehicle: Vehicle): boolean {
+    var today = new Date();
+
+    for (let rentSchedule of vehicle.rentSchedules) {
+      if (rentSchedule.from <= today && rentSchedule.to >= today) {
+        return false;
+      }
+    }
+    return true;
   }
 }

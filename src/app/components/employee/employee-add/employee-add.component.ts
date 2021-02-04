@@ -1,6 +1,7 @@
 import { Location } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { EmployeePosition } from 'src/app/enumerations/enum-constants';
 import { Employee } from 'src/app/models/employee';
 import { CustomvalidationService } from 'src/app/services/customvalidation.service';
 import { EmployeeService } from 'src/app/services/employee.service';
@@ -12,6 +13,7 @@ import { EmployeeAddFormGroup } from '../../form-groups/employee-add.formgroup';
   styleUrls: ["./employee-add.component.css"],
 })
 export class EmployeeAddComponent implements OnInit {
+  employeePositions: string[] = Object.values(EmployeePosition);
   employeeAddFormGroup: EmployeeAddFormGroup = new EmployeeAddFormGroup(this.customValidationService);
   updatingEmployee: Employee;
   isUpdating: boolean = false;
